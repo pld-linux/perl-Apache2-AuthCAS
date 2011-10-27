@@ -1,12 +1,11 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
+
 %define		pdir	Apache2
 %define		pnam	AuthCAS
 %include	/usr/lib/rpm/macros.perl
-Summary:	Apache2::AuthCAS - A configurable Apache authentication module that enables you to protect content on an Apache server using an existing JA-SIG CAS authentication server
-#Summary(pl.UTF-8):
+Summary:	Apache2::AuthCAS - A configurable Apache authentication module
 Name:		perl-Apache2-AuthCAS
 Version:	0.4
 Release:	1
@@ -25,23 +24,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Apache2::AuthCAS module allows a user to protect arbitrary content
 on an Apache server with JA-SIG CAS.
 
-Add the following lines to your Apache configuration file to load the
-custom configuration tags for CAS and allow for CAS authentication:
-
-PerlLoadModule APR::Table PerlLoadModule
-Apache2::AuthCAS::Configuration PerlLoadModule Apache2::AuthCAS
-
-At this point, the configuration directives may be used. All
-directives can be nested in Location, Directory, or VirtualHost
-sections.
-
-Add the following lines to an Apache configuration file or .htaccess
-file:
-
-
-
-# %description -l pl.UTF-8 # TODO
-
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
@@ -54,7 +36,6 @@ file:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
