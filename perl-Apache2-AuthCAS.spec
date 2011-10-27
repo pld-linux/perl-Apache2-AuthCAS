@@ -17,6 +17,7 @@ Source0:	http://www.cpan.org/modules/by-module/Apache2/%{pdir}-%{pnam}-%{version
 URL:		http://search.cpan.org/dist/Apache2-AuthCAS/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	apache-mod_perl >= 2.2.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
