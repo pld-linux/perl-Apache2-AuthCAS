@@ -4,7 +4,6 @@
 
 %define		pdir	Apache2
 %define		pnam	AuthCAS
-%include	/usr/lib/rpm/macros.perl
 Summary:	Apache2::AuthCAS - A configurable Apache authentication module
 Name:		perl-Apache2-AuthCAS
 Version:	0.4
